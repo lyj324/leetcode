@@ -7,7 +7,9 @@ package _0_20;
  */
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
@@ -29,10 +31,38 @@ import java.util.List;
  */
 public class _17_电话号码的字母组合 {
     public static void main(String[] args) {
-
+        String digits="";
+        System.out.println(letterCombinations(digits));
     }
+    static List<String> result=new ArrayList<>();
+    static Map<String,String> phone=new HashMap<String,String>();
     public static List<String> letterCombinations(String digits) {
-        List<String> result=new ArrayList<>();
+        result.clear();
+        phone.put("2", "abc");
+        phone.put("3", "def");
+        phone.put("4", "ghi");
+        phone.put("5", "jkl");
+        phone.put("6", "mno");
+        phone.put("7", "pqrs");
+        phone.put("8", "tuv");
+        phone.put("9", "wxyz");
+        if (digits.length() != 0) {
+            backtrack("", digits);
+        }
         return result;
+    }
+    public static void backtrack(String combination, String next_digits){
+        //如果已经没有下一个数字了，说明需要封装入结果集
+        if(next_digits.length()==0){
+            result.add(combination);
+        }
+        else {
+            String digit=next_digits.substring(0,1);
+            String letters=phone.get(digit);
+            for (int i = 0; i <letters.length() ; i++) {
+                String letter = phone.get(digit).substring(i, i + 1);
+                backtrack(combination+letter,next_digits.substring(1));
+            }
+        }
     }
 }
