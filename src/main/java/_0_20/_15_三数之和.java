@@ -32,9 +32,13 @@ public class _15_三数之和 {
     }
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result=new ArrayList<>();
-        int len=nums.length;
-        if (nums == null||len<3) {
+        if (nums == null) {
             return result;
+        }else {
+            int len=nums.length;
+            if(len<3){
+                return result;
+            }
         }
         //把元素从小到大排列
         Arrays.sort(nums);
