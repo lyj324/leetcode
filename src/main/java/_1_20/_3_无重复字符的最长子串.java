@@ -1,4 +1,4 @@
-package _0_20; /**
+package _1_20; /**
  * @author lyj
  * @version 1.0
  * @date 2019/9/4 14:23
@@ -6,8 +6,6 @@ package _0_20; /**
 
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。

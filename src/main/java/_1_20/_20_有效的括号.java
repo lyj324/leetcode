@@ -1,4 +1,4 @@
-package _0_20;
+package _1_20;
 
 /**
  * @author lyj
@@ -6,8 +6,6 @@ package _0_20;
  * @date 2019/9/11 9:41
  */
 
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.Stack;
 
 /**
