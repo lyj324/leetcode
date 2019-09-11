@@ -41,8 +41,8 @@ public class _23_合并K个排序链表 {
         listNode2_1.next=listNode2_2;
         listNode2_2.next=listNode2_3;
         listNode3_1.next=listNode3_2;
-        //ListNode[] listNodes={listNode1_1,listNode2_1,listNode3_1};
-        ListNode[] listNodes={};
+        ListNode[] listNodes={listNode1_1,listNode2_1,listNode3_1};
+        //ListNode[] listNodes={};
         PrintList(mergeKLists(listNodes));
     }
     public static class ListNode {
