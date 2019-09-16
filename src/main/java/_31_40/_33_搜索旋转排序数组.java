@@ -52,7 +52,8 @@ public class _33_搜索旋转排序数组 {
      *  4.1如果nums[low]<=nums[mid]，说明查找范围是完全升序的，即没有发生旋转
      *      4.1.1此时如果target比nums[low]小，或者target比nums[mid]大，说明不在这段上，向后查找
      *      4.1.2向后查找low重新指向mid+1，查找后半段
-     *  4.2此时查找范围有一部分发生旋转，只有当同时满足target比nums[low]小，比nums[mid]大，
+     *  4.2如果nums[low]>nums[mid]，此时查找范围有一部分发生旋转，
+     *  只有当同时满足target比nums[low]小，比nums[mid]大，
      *  才能判断不在这段上，需要向后查找
      *      4.2.1向后查找low重新指向mid+1，查找后半段
      *  4.3此时说明在本段，继续二分查找higt=min
