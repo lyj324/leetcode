@@ -75,7 +75,7 @@ public class _48_旋转图像 {
             }
         }
         //print(matrix);
-        //翻转每一行
+        //左右翻转每一行
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n / 2; j++) {
                 int tmp = matrix[i][j];
