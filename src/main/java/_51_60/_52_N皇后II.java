@@ -3,12 +3,10 @@ package _51_60;
 /**
  * @author lyj
  * @version 1.0
- * @date 2019/9/23 19:18
+ * @date 2019/10/8 18:13
  */
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -18,33 +16,35 @@ import java.util.List;
  *
  * 上图为 8 皇后问题的一种解法。
  *
- * 给定一个整数 n，返回所有不同的 n 皇后问题的解决方案。
- *
- * 每一种解法包含一个明确的 n 皇后问题的棋子放置方案，该方案中 'Q' 和 '.' 分别代表了皇后和空位。
+ * 给定一个整数 n，返回 n 皇后不同的解决方案的数量。
  *
  * 示例:
  *
  * 输入: 4
- * 输出: [
- *  [".Q..",  // 解法 1
- *   "...Q",
- *   "Q...",
- *   "..Q."],
+ * 输出: 2
+ * 解释: 4 皇后问题存在如下两个不同的解法。
+ * [
+ *  [".Q..",  // 解法 1
+ *   "...Q",
+ *   "Q...",
+ *   "..Q."],
  *
- *  ["..Q.",  // 解法 2
- *   "Q...",
- *   "...Q",
- *   ".Q.."]
+ *  ["..Q.",  // 解法 2
+ *   "Q...",
+ *   "...Q",
+ *   ".Q.."]
  * ]
- * 解释: 4 皇后问题存在两个不同的解法。
  *
  * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/n-queens
+ * 链接：https://leetcode-cn.com/problems/n-queens-ii
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class _51_N皇后 {
+public class _52_N皇后II {
     public static void main(String[] args) {
-        List<List<String>> lists = new _51_N皇后().solveNQueens(4);
+        System.out.println(new _52_N皇后II().totalNQueens(4));
+    }
+    public int totalNQueens(int n) {
+        return solveNQueens(n).size();
     }
     int rows[];
     // "hill" diagonals
@@ -101,7 +101,7 @@ public class _51_N皇后 {
                 if (row + 1 == n) {
                     addSolution();
                 }
-                    // if not proceed to place the rest
+                // if not proceed to place the rest
                 else {
                     backtrack(row + 1);
                 }

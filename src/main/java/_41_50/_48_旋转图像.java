@@ -6,6 +6,8 @@ package _41_50;
  * @date 2019/9/17 11:39
  */
 
+import java.util.Arrays;
+
 /**
  * 给定一个 n × n 的二维矩阵表示一个图像。
  *
