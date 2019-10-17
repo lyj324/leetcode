@@ -45,7 +45,7 @@ public class _74_搜索二维矩阵 {
     }
 
     public static boolean searchMatrix(int[][] matrix, int target) {
-        if(matrix==null||matrix.length==0) {
+        if (matrix == null || matrix.length == 0) {
             return false;
         }
         for (int i = 0, j = matrix[0].length - 1; i < matrix.length && j >= 0; ) {

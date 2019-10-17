@@ -39,37 +39,37 @@ package _71_80;
  */
 public class _72_编辑距离 {
     public static void main(String[] args) {
-        String word1="intention";
-        String word2="execution";
-        System.out.println(minDistance(word1,word2));
+        String word1 = "intention";
+        String word2 = "execution";
+        System.out.println(minDistance(word1, word2));
     }
 
     public static int minDistance(String word1, String word2) {
         int n1 = word1.length();
         int n2 = word2.length();
-        int[][] D=new int[n1+1][n2+1];
-        for (int i = 1; i < n2+1; i++) {
-            D[0][i]=D[0][i-1]+1;
+        int[][] D = new int[n1 + 1][n2 + 1];
+        for (int i = 1; i < n2 + 1; i++) {
+            D[0][i] = D[0][i - 1] + 1;
         }
-        for (int i = 1; i < n1+1; i++) {
-            D[i][0]=D[i-1][0]+1;
+        for (int i = 1; i < n1 + 1; i++) {
+            D[i][0] = D[i - 1][0] + 1;
         }
-        for (int i = 1; i < n1+1; i++) {
-            for (int j = 1; j < n2+1; j++) {
-                if(word1.charAt(i-1)==word2.charAt(j-1)){
-                    D[i][j]=D[i-1][j-1];
-                }
-                else {
-                    D[i][j]=Math.min(Math.min(D[i-1][j-1],D[i-1][j]),D[i][j-1])+1;
+        for (int i = 1; i < n1 + 1; i++) {
+            for (int j = 1; j < n2 + 1; j++) {
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    D[i][j] = D[i - 1][j - 1];
+                } else {
+                    D[i][j] = Math.min(Math.min(D[i - 1][j - 1], D[i - 1][j]), D[i][j - 1]) + 1;
                 }
             }
         }
         return D[n1][n2];
     }
-    public static void printMap(int[][] map){
-        for (int[] ints :map) {
-            for (int i:ints) {
-                System.out.print(i+" ");
+
+    public static void printMap(int[][] map) {
+        for (int[] ints : map) {
+            for (int i : ints) {
+                System.out.print(i + " ");
             }
             System.out.println("");
         }

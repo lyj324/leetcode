@@ -50,26 +50,26 @@ package _71_80;
 public class _73_矩阵置零 {
     public static void main(String[] args) {
         int[][] matrix = {
-                {-4,-2147483648,6,-7,0},
-                {-8,6,-8,-6,0},
-                {2147483647,2,-9,-6,-10}
+                {-4, -2147483648, 6, -7, 0},
+                {-8, 6, -8, -6, 0},
+                {2147483647, 2, -9, -6, -10}
         };
         setZeroes(matrix);
         printMap(matrix);
     }
 
     public static void setZeroes(int[][] matrix) {
-        boolean flag1 = false,flag2= false;
+        boolean flag1 = false, flag2 = false;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j] == 0) {
-                    if(i==0&&j==0){
-                        flag1=true;
-                        flag2=true;
-                    }else if(i==0){
-                        flag1=true;
-                    }else if(j==0) {
-                        flag2=true;
+                    if (i == 0 && j == 0) {
+                        flag1 = true;
+                        flag2 = true;
+                    } else if (i == 0) {
+                        flag1 = true;
+                    } else if (j == 0) {
+                        flag2 = true;
                     }
                     matrix[i][0] = 0;
                     matrix[0][j] = 0;
@@ -95,7 +95,7 @@ public class _73_矩阵置零 {
                 matrix[0][i] = 0;
             }
         }
-        if(flag2){
+        if (flag2) {
             for (int i = 0; i < matrix.length; i++) {
                 matrix[i][0] = 0;
             }
