@@ -56,7 +56,7 @@ public class _33_搜索旋转排序数组 {
      *  只有当同时满足target比nums[low]小，比nums[mid]大，
      *  才能判断不在这段上，需要向后查找
      *      4.2.1向后查找low重新指向mid+1，查找后半段
-     *  4.3此时说明在本段，继续二分查找higt=min
+     *  4.3此时说明在本段，继续二分查找high=mid
      *  5.如果能查到必然满足
      *      5.1low==hight
      *      5.2low<nums.length

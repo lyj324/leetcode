@@ -40,7 +40,7 @@ package _421_430;
  */
 public class _424_替换后的最长重复字符 {
     public static void main(String[] args) {
-        String s="aabaabaa";
+        String s="aabacaabaa";
         int k=1;
         System.out.println(characterReplacement(s, k));
     }
